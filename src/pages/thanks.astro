@@ -1,0 +1,21 @@
+---
+import Mainlayout from "../layouts/Mainlayout.astro"
+ import img from './public/images/icon-thank-you.svg'
+ import { Image } from "astro:assets"
+ ---
+ 
+ 
+ <Mainlayout>
+    <div class = "flex flex-col justify-center mx-auto place-content-center mt-5 md:mt-10 md:w-[500px] w-[450px] p-5 bg-white overflow-hidden" >
+        <div class="flex flex-col mb-2 gap-5 text-center justify-center place-content-center place-items-center mx-auto ">
+           <Image src={img} alt='thanks' class=" font-bold capitalize w-[100px] "/>
+           <p class="text-3xl font-bold capitalize">Thank you!</p>
+        </div>
+
+        <div class="ml-10 mt-5 md:w-[400px] w-[350px] text-center justify-center">
+            <p>Thanks for confirming your subscription! hope you have fun using our platform. If you ever need support, please feel to contact our customer support center @loremgame.com</p>
+                
+        </div>    
+    </div>
+    
+    </Mainlayout>

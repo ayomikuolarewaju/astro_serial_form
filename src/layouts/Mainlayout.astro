@@ -1,0 +1,26 @@
+---
+import Nav from "../components/Nav.astro"
+
+---
+
+
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="bg-slate-200">
+    <div class=" md:flex mt-0 h-screen w-screen md:h-[650px] md:w-[1200px] bg-white md:mx-auto md:place-content-center md:place-items-center rounded-lg md:mt-10 md:overflow-hidden">
+        
+			<Nav/>
+		    <slot/>
+		    
+		
+    </div>
+	</body>
+</html>

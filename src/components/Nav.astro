@@ -1,0 +1,51 @@
+---
+export const sources = [
+{id:1,title:"step 1",subtitle:"your info",href:"/"},
+{id:2,title:"step 2",subtitle:"select plan",href:"/step2"},
+{id:3,title:"step 3",subtitle:"add ons",href:"/step3"},
+{id:4,title:"step 4",subtitle:"summary",href:"/step4"},
+]
+
+const clrbg = Astro.url.pathname
+---
+
+<div class="md:flex hidden">
+    <div  class=" p-5 ml-10 mt-36 rounded-xl bg-[url('/images/bg-sidebar-desktop.svg')] bg-no-repeat h-screen w-[300px]">
+        {sources.map((source)=>
+        <div class="flex gap-5 pl-2 pt-10">
+         <div>
+             { clrbg === source.href ? <h1 class="rounded-full border-white-1 border text-blue-700 pt-2 pl-4 text-md w-10 h-10 mx-auto bg-white">{source.id}</h1>
+                :<h1 class="rounded-full border-white-1 border text-white pt-2 pl-4 text-md w-10 h-10 mx-auto">{source.id}</h1>
+             
+         }
+         </div>
+         <div>
+             <h2 class="text-sm uppercase font-normal text-white">{source.title}</h2>
+             <p class="text-xs uppercase font-semibold text-white">{source.subtitle}</p>
+         </div>
+        </div>
+     
+        )}
+         
+     </div>
+</div>
+
+<div class="md:hidden flex ">
+    <div  class="flex rounded-xl bg-[url('/images/bg-sidebar-mobile.svg')] bg-no-repeat h-[150px] w-[400px] p-5">
+        {sources.map((source)=>
+        <div class="flex pl-2 pt-2 mx-auto place-items-center">
+         <div >
+             { clrbg === source.href ? <h1 class="rounded-full border-white-1 border text-blue-700 pt-2 pl-4 text-md w-10 h-10  bg-white">{source.id}</h1>
+                :<h1 class="rounded-full border-white-1 border text-white pt-2 pl-4 text-md w-10 h-10 ">{source.id}</h1>
+             
+         }
+         </div>
+       
+        </div>
+     
+        )}
+         
+     </div>
+</div>
+  
+

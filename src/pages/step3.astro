@@ -1,0 +1,52 @@
+---
+import Mainlayout from "../layouts/Mainlayout.astro"
+ 
+ const {href = '/step4'} = Astro.props
+
+ const sources = [
+{title:"Online Services",subtitle:"Access to multiplayer games",dues:"+$1/mo"},
+{title:"Larger storage",subtitle:"EXTRA 1TB of cloud storage",dues:"+$1/mo"},
+{title:"Customizable profile",subtitle:"Custom theme on your profile",dues:"+$1/mo"},
+]
+
+ ---
+ 
+ 
+ <Mainlayout>
+    <div class = " flex flex-col md:mx-auto md:place-content-center ml-10 md:mt-10 md:w-[500px] w-[250px] p-5 bg-white">
+        <div class="flex flex-col mb-2 gap-2 w-screen">
+            <h3 class="text-3xl font-bold text-blue-500">Select your plan</h3>
+            <p class="test-xs md:text-sm text-gray-500">you have options of either monthly or yearly billing</p>
+        </div>
+
+        <div class="flex flex-col gap-5 rounded-xl mt-5 w-screen">
+                {sources.map((source)=>
+                   <div class="flex justify-start gap-5 bg-slate-300 p-5 rounded-xl w-[350px] cursor-pointer">
+
+                       <div class=" z-40">
+                           <input type="checkbox" name="checkbox" id="" class="p-5">
+                       </div>
+                       <div class=" flex flex-col w-screen">
+                           <p class="text-sm font-bold capitalize">{source.title}</p>
+                           <p class="text-xs">{source.subtitle}</p>
+                       </div>
+                       <div>
+                          <p class="text-xs">{source.dues}</p>
+                       </div>
+                       
+                   </div>
+
+                 )}
+            </div> 
+
+
+            <div class="flex md:gap-20 gap-48 md:w-screen w-[350px] ">
+                <button><a href="/" class="md:mt-[150px]">Go Back</a></button>
+                <button class="bg-blue-600 text-white p-3 rounded-lg font-semibold md:ml-[360px] md:mt-[150px] mt-5 ">
+                    <a href = `${href}`> Next Step </a>
+                </button>
+            </div>
+        
+    </div>
+    
+    </Mainlayout>

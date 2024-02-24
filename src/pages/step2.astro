@@ -1,0 +1,56 @@
+---
+import Mainlayout from "../layouts/Mainlayout.astro"
+const {href = '/step3'} = Astro.props
+import Footer from "../components/Nav.astro"
+const sources = [
+{img: '/images/icon-arcade.svg',title:"Arcade",subtitle:"9/monthly"},
+{img: '/images/icon-advanced.svg',title:"Advance",subtitle:"12/monthly"},
+{img: '/images/icon-pro.svg',title:"Pro",subtitle:"15/monthly"},
+]
+---
+
+
+
+<Mainlayout>
+    <div class = " flex flex-col md:mx-auto md:place-content-center ml-10 md:mt-10 md:w-[500px] w-[200px] p-5 bg-white">
+        
+            <div class="flex flex-col mb-2 gap-2 w-screen">
+                <h3 class="text-3xl font-bold text-blue-500">Select your plan</h3>
+                <p class="test-xs md:text-sm text-gray-500">you have options of either monthly or yearly billing</p>
+            </div>
+
+           
+             <div class="md:flex md:gap-10 gap:5 rounded-xl md:mt-5 md:mb-10 mt-3 mb-3  ">
+                {sources.map((source)=>
+                   <div class="flex md:flex-col  justify-start gap-10 mb-5 bg-slate-300 p-5 rounded-xl w-[350px] hover:border-gray-800 hover:border-1 cursor-pointer">
+
+                       <div class=" z-40">
+                           <img src={source.img} alt="" srcset="" width="40" height="40">
+                       </div>
+                       <div class="md:mt-[20px]">
+                           <p>{source.title}</p>
+                           <p>{source.subtitle}</p>
+                       </div>
+                       
+                   </div>
+
+                 )}
+            </div> 
+           
+    
+            <div class="flex bg-slate-300 w-[350px] md:w-[550px] p-3 md:gap-10 gap-5 rounded-lg place-content-center">
+                <p>monthly</p>
+                <input type="range" name="" id="">
+                <p>yearly</p>
+            </div>
+
+            <div class="flex md:gap-20 gap-48 md:w-screen w-[350px] ">
+               <button><a href="/" class="md:mt-[150px]">Go Back</a></button>
+                <button class="bg-blue-600 text-white p-3 rounded-lg font-semibold md:ml-[360px] md:mt-[150px] mt-5 ">
+                    <a href = `${href}`> Next Step </a>
+                </button>
+            </div>
+            
+    </div>
+    
+    </Mainlayout>

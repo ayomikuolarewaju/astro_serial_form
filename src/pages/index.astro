@@ -1,0 +1,37 @@
+---
+import Mainlayout from "../layouts/Mainlayout.astro"
+ 
+export type Props = {
+	href:string
+}
+
+const {href = '/step2'} = Astro.props
+---
+
+
+<Mainlayout>
+<div class=" flex flex-col md:mx-auto md:place-content-center md:mt-10 md:w-[500px] w-[250px] p-5 bg-white">
+	<div class="md:flex flex-col justify-start gap-2">
+		<div>
+			<h3 class="text-3xl font-bold text-blue-500">Personal Info</h3>
+			<p class="text-sm text-gray-500">Please provide your name,email address and phone number</p>
+		</div>
+		<form class="flex flex-col justify-start gap-2 md:w-[500px] w-[350px]">
+			<label for="">Name</label>
+			<input type="text" class="p-2 border border-gray-700 rounded-md" required>
+			<label for="">Email Address</label>
+			<input type="email" class="p-2 border border-gray-700 rounded-md" required>
+			<label for="">Phone Number</label>
+			<input type="number" class="p-2 border border-gray-700 rounded-md" required>
+            <button class="bg-blue-600 text-white p-3 rounded-lg font-semibold md:ml-[360px] md:mt-[150px] ml-[100px] mt-[70px] w-[200px] "><a href= `${href}`>Next Step</a></button>
+		</form>
+	</div>
+	
+</div>
+
+</Mainlayout>
+
+
+
+
+
